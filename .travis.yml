@@ -9,6 +9,10 @@ env:
 script:
   - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project SwiftyTeo.xcodeproj -scheme SwiftyTeo -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
 
+before_install:
+  - gem install cocoapods --no-ri --no-rdoc
+  - gem install slather --no-ri --no-rdoc
+
 after_success:
   - slather
   - bash <(curl -s https://codecov.io/bash) -f reports/cobertura.xml -X coveragepy -X gcov -X xcode
