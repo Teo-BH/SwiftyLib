@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+xcodeproj: SwiftyTeo.xcodeproj
+scheme: SwiftyTeo
+output_directory: reports
+ignore:
+  - SwiftyTeoTests/*
