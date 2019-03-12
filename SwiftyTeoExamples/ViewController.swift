@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import SwiftyTeo
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let calc = SwiftyLib()
+        let result = calc.add(a: 2, b: 2)
+        print(result)
     }
 
 
